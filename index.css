@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --orange: #f47621;
+    --orangeDarker: #ed660b;
+}
+
+html {
+    background-color: white;
+    font-size: 10pt;
+    font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro','メイリオ', 'Meiryo', '游ゴシック', 'Yu Gothic', 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+}
+
+.content {
+    box-sizing: border-box;
+    width: 95vw;
+    height: 95vh;
+    margin: auto;
+    margin-top: 2.5vh;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 1rem;
+    border: solid 2px var(--orange);
+    text-align: center;
+    overflow-y: scroll;
+}
+
+.contentTitle {
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.0;
+    color:black;
+    margin-bottom: 1rem;
+}
+
+.recommendTitle {
+    color: var(--orange);
+}
+.recommendHand {
+    width: min(50vw, 160px);
+    height: min(50vw, 160px);
+    margin: auto;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    border: solid 0.2rem var(--orange);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.recommendHand.gu {
+    background-image: url("gu.png");
+}
+.recommendHand.choki {
+    background-image: url("choki.png");
+}
+.recommendHand.pa {
+    background-image: url("pa.png");
+}
+
+.jrHandsTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--orange);
+}
+.jrHands {
+    font-size: 0;
+    margin-bottom: 1rem;
+}
+.jrHand {
+    display: inline-block;
+    width: 72px;
+    height: 72px;
+    margin: 0.5rem;
+    border: solid 0.2rem var(--orange);
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 0.5rem;
+}
+.jrHand.gu {
+    background-image: url("gu.png");
+}
+.jrHand.choki {
+    background-image: url("choki.png");
+}
+.jrHand.pa {
+    background-image: url("pa.png");
+}
+.jrHand:hover:not(.disabled) {
+    background-color: var(--orange);
+}
+.jrHand.selected {
+    background-color: var(--orange);
+}
+.jrHand.disabled {
+    background-color: gray;
+    border: none;
+}
+
+.nextButton {
+    padding: 8px 16px;
+    background-color: gray;
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 2rem;
+}
+.nextButton:enabled {
+    background-color: var(--orange);
+}
+.nextButton:hover:enabled {
+    background-color: var(--orangeDarker);
+}
