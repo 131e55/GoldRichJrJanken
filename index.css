@@ -17,7 +17,7 @@ html {
 .content {
     box-sizing: border-box;
     width: 95vw;
-    height: 95vh;
+    height: 90vh;
     margin: auto;
     margin-top: 2.5vh;
     padding: 1rem;
@@ -37,13 +37,13 @@ html {
 }
 
 .recommendTitle {
+    font-size: 1.4rem;
     color: var(--orange);
 }
 .recommendHand {
-    width: min(50vw, 160px);
-    height: min(50vw, 160px);
+    width: 144px;
+    height: 144px;
     margin: auto;
-    margin-bottom: 1rem;
     border-radius: 1rem;
     border: solid 0.2rem var(--orange);
     background-size: contain;
@@ -59,8 +59,15 @@ html {
     background-image: url("pa.png");
 }
 
+.rateText {
+    font-size: 1rem;
+    font-weight: normal;
+    color: black;
+    margin-bottom: 1rem;
+}
+
 .jrHandsTitle {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: bold;
     color: var(--orange);
 }
@@ -99,6 +106,7 @@ html {
 }
 
 .nextButton {
+    -webkit-appearance: none;
     padding: 8px 16px;
     background-color: gray;
     border: none;

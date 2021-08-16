@@ -5,6 +5,8 @@ class Game {
         this.eRecommendTitle = d.getElementsByClassName("recommendTitle")[0];
         this.eRecommendText = d.getElementsByClassName("recommendText")[0];
         this.eRecommendHand = d.getElementsByClassName("recommendHand")[0];
+        this.eRateText = d.getElementsByClassName("rateText")[0];
+        this.eRateText.innerHTML = "";
         this.eEnemyHandsTitle = d.getElementsByClassName("jrHandsTitle")[0];
         this.eEnemyHands = [
             d.getElementsByClassName("jrHand gu")[0],
@@ -37,6 +39,7 @@ class Game {
 
             if (this.round >= 9) {
                 window.location.reload();
+                return;
             }
             this.round += 1;
             if (this.round === 9) {
@@ -67,6 +70,7 @@ class Game {
             choki: this.enemyRemainingHands[1] / total,
             pa: this.enemyRemainingHands[2] / total,
         };
+        // evaluation
         let gu = p.gu * 0 + p.choki * 100 + p.pa * -100;
         let choki = p.gu * -100 + p.choki * 0 + p.pa * 100;
         let pa = p.gu * 100 + p.choki * -100 + p.pa * 0;
@@ -76,13 +80,23 @@ class Game {
         classList.remove("gu", "choki", "pa");
         if (gu === max) {
             classList.add("gu");
+            this.setRateText(p.choki, p.gu, p.pa);
         } else if (choki === max) {
             classList.add("choki");
+            this.setRateText(p.pa, p.choki, p.gu);
         } else {
             classList.add("pa");
+            this.setRateText(p.gu, p.pa, p.choki);
         }
         this.eRecommendHand.classList = classList;
         console.log(gu, choki, pa);
+    }
+
+    setRateText(win, draw, lose) {
+        let winText = (Math.floor(win * 1000) / 10).toString();
+        let drawText = (Math.floor(draw * 1000) / 10).toString();
+        let loseText = (Math.floor(lose * 1000) / 10).toString();
+        this.eRateText.innerHTML = "かち率:" + winText + "% " + "あいこ率:" + drawText + "% " + "まけ率:" + loseText + "%";
     }
 }
 
